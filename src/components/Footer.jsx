@@ -1,3 +1,4 @@
+import React from "react";
 import A from "./common/A";
 
 function Footer() {

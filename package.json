@@ -5,6 +5,7 @@
   "private": true,
   "version": "0.0.0",
   "main": "electron/main.js",
+  "icon": "assets/icons/safe-box.ico",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -49,6 +50,7 @@
   "dependencies": {
     "autoprefixer": "^10.4.20",
     "better-sqlite3": "^11.7.2",
+    "crypto": "^1.0.1",
     "electron-updater": "^6.3.9",
     "postcss": "^8.4.49",
     "react": "^18.3.1",

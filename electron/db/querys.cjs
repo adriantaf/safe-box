@@ -1,6 +1,6 @@
 const DB = require("./database.cjs");
 
-function insert(plaform, username, password, creationDate) {
+async function insert(plaform, username, password, creationDate) {
   const statement = DB.prepare('INSERT INTO keys (platform, username, password, creation_date, update_date) VALUES (?, ?, ?, ?, ?)');
   statement.run(plaform, username, password, creationDate, creationDate);
 }
@@ -30,7 +30,7 @@ function updateUsername(id, newValue) {
   statement.run(newValue, id);
 }
 
-function updatePassword(id, newValue) {
+async function updatePassword(id, newValue) {
   const statement = DB.prepare('UPDATE keys SET password = ? WHERE id = ?');
   statement.run(newValue, id);
 }

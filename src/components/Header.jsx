@@ -13,7 +13,7 @@ function Header() {
         <div className="flex items-center gap-2">
           <img
             src={ Logo }
-            className="size-10 rounded-lg border border-gray-400 dark:border-gray-600"
+            className="size-10 rounded-lg border-2 border-gray-400 dark:border-gray-600"
             alt="Logotipo de SafeBox"
           />
           <span className="font-bold font-mono text-3xl">SafeBox</span>
