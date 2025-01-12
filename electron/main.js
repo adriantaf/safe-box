@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain, shell } = require('electron');
+const { app, BrowserWindow, ipcMain, shell, autoUpdater, dialog } = require('electron');
 const path = require('path');
 const DB_QUERYS = require('./db/querys.cjs');
 
@@ -31,7 +31,7 @@ app.on('ready', () => {
       enableRemoteModule: false,
       nodeIntegration: false,
     },
-    icon: path.join(__dirname, '../assets/icons/safe-box-24.png')
+    icon: path.join(__dirname, '../assets/icons/safe-box.ico')
   });
 
   if (process.env.VITE_DEV_SERVER_URL) {
@@ -41,10 +41,36 @@ app.on('ready', () => {
     mainWindow.loadFile(path.join(__dirname, '../dist/index.html'));
     mainWindow.setMenu(null);
   }
+
+  autoUpdater.checkForUpdates();
 });
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit();
   }
+});
+
+// Event listeners for autoUpdater
+autoUpdater.on('update-available', () => {
+  dialog.showMessageBox({
+    type: 'info',
+    title: 'Actualización disponible',
+    message: 'Hay una nueva versión disponible. Se descargará en segundo plano.',
+  });
+});
+
+autoUpdater.on('update-downloaded', () => {
+  dialog
+    .showMessageBox({
+      type: 'info',
+      title: 'Actualización lista',
+      message: 'Se ha descargado una nueva versión. ¿Quieres reiniciar la aplicación para actualizar?',
+      buttons: ['Reiniciar', 'Más tarde'],
+    })
+    .then((result) => {
+      if (result.response === 0) {
+        autoUpdater.quitAndInstall();
+      }
+    });
 });
