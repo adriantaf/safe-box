@@ -54,8 +54,13 @@ function FormPassword() {
     setPasswordValue(password);
   }
 
+  function isModify() {
+    return (platformValue !== dataForm.platform || usernameValue !== dataForm.username || passwordValue !== dataForm.password);
+  }
+
   async function handleSubmit(e) {
     e.preventDefault();
+    const dateNow = Date.now();
 
     if (dataForm) {
       if (platformValue !== dataForm.platform) {
@@ -67,11 +72,11 @@ function FormPassword() {
       if (passwordValue !== dataForm.password) {
         await window.electronAPI.db.updatePassword(dataForm.id, passwordValue);
       }
-      if (platformValue !== dataForm.platform || usernameValue !== dataForm.username || passwordValue !== dataForm.password) {
-        await window.electronAPI.db.updateDate(dataForm.id, Date.now());
+      if (isModify()) {
+        await window.electronAPI.db.updateDate(dataForm.id, dateNow);
       }
     } else {
-      await window.electronAPI.db.insert(platformValue, usernameValue, passwordValue, Date.now());
+      await window.electronAPI.db.insert(platformValue, usernameValue, passwordValue, dateNow);
     }
 
     const updatedData = await window.electronAPI.db.selectAll();
@@ -121,7 +126,7 @@ function FormPassword() {
               } }>
               Cancelar
             </Button>
-            <Button className="me-0 mb-0" submit>
+            <Button disabled={dataForm && !isModify()} className="me-0 mb-0" submit>
               {
                 dataForm ? 'Actualizar' : 'Guardar'
               }

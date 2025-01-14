@@ -11,6 +11,7 @@ DB.exec(`
     platform TEXT NOT NULL,
     username TEXT NOT NULL,
     password TEXT NOT NULL,
+    iv TEXT NOT NULL,
     creation_date TEXT NOT NULL,
     update_date TEXT NOT NULL
   )
@@ -25,6 +26,10 @@ if (!existingColumns.includes('creation_date')) {
 
 if (!existingColumns.includes('update_date')) {
   DB.exec(`ALTER TABLE keys ADD COLUMN update_date TEXT NOT NULL DEFAULT (${dateNow});`);
+}
+
+if (!existingColumns.includes('iv')) {
+  DB.exec(`ALTER TABLE keys ADD COLUMN iv TEXT NOT NULL DEFAULT ('undefined');`);
 }
 
 module.exports = DB;

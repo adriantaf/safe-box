@@ -5,7 +5,7 @@ import { useFormData } from "../context/FormPassDataProvider";
 import Logo from '../assets/logo/safe-box.png';
 
 function Header() {
-  const { setFormVisibility } = useFormData();
+  const { formVisibility, setFormVisibility } = useFormData();
 
   return (
     <header className="relative z-[1000] col-span-2 border-b border-b-gray-300 dark:border-b-neutral-700">
@@ -20,6 +20,7 @@ function Header() {
         </div>
         <div className='flex justify-end'>
           <ButtonIcon
+            disabled={ formVisibility }
             className='gap-3 mb-0 me-0'
             onClick={ () => setFormVisibility(true) }>
             <Add className="size-5" /> Agregar Contraseña

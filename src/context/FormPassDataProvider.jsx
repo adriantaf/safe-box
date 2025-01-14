@@ -1,12 +1,12 @@
 /* eslint-disable react/prop-types */
-import { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 
 const FormDataContext = createContext();
 
 export function FormPassDataProvider({ children }) {
   const [dataForm, setDataForm] = useState(null);
   const [formVisibility, setFormVisibility] = useState(false);
-
+  
   return (
     <FormDataContext.Provider value={ { dataForm, setDataForm, formVisibility, setFormVisibility } }>
       { children }
@@ -14,7 +14,6 @@ export function FormPassDataProvider({ children }) {
   )
 }
 
-// eslint-disable-next-line react-refresh/only-export-components
 export function useFormData() {
   const context = useContext(FormDataContext);
 

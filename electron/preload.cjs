@@ -4,8 +4,8 @@ contextBridge.exposeInMainWorld('electronAPI', {
   openExternal: (url) => ipcRenderer.invoke('open-external', url),
   db: {
     selectAll: () => ipcRenderer.invoke('db-select-all'),
-    select: (id) => ipcRenderer.invoke('db-select', id),
-    insert: (platform, username, password) => ipcRenderer.invoke('db-insert', platform, username, password),
+    // select: (id) => ipcRenderer.invoke('db-select', id),
+    insert: (platform, username, password, creationDate) => ipcRenderer.invoke('db-insert', platform, username, password, creationDate),
     delete: (id) => ipcRenderer.invoke('db-delete', id),
     updatePlatform: (id, newValue) => ipcRenderer.invoke('db-update-platform', id, newValue),
     updateUsername: (id, newValue) => ipcRenderer.invoke('db-update-username', id, newValue),
