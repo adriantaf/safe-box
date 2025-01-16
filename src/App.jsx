@@ -1,10 +1,10 @@
-import FormPassword from './components/FormPassword';
 import Table from './components/Table';
 import Header from './components/Header';
 import { useFormData } from './context/FormPassDataProvider';
 import React from 'react';
 import { useDataFromDB } from './context/DataFromDBProvider';
 import Key from "./assets/icons/key.jsx";
+import Aside from './components/Aside.jsx';
 
 function App() {
   const { formVisibility } = useFormData();
@@ -31,9 +31,7 @@ function App() {
           ) }
         </main>
         { formVisibility && (
-          <aside className='w-[450px] flex flex-col gap-3 rounded-lg border border-gray-300 bg-white dark:bg-zinc-900 dark:border-gray-600 overflow-y-auto mb-2 mr-2'>
-            <FormPassword />
-          </aside>
+          <Aside />
         ) }
       </div>
     </>
