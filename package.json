@@ -3,7 +3,7 @@
   "description": "App para gestionar contraseñas",
   "name": "safe-box",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "electron/main.js",
   "icon": "assets/icons/safe-box.png",
   "scripts": {
@@ -44,6 +44,7 @@
     "autoprefixer": "^10.4.20",
     "better-sqlite3": "^11.7.2",
     "crypto": "^1.0.1",
+    "dotenv": "^16.4.7",
     "postcss": "^8.4.49",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
