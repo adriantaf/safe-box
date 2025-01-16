@@ -28,4 +28,3 @@ dist-ssr
 
 # Electron
 dist-electron
-electron/crypt/secret_key.cjs
