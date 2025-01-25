@@ -25,12 +25,6 @@ function Table({ dataFromDB }) {
     setFiilterData(filtered);
   }
 
-  // function handleResetSearch() {
-  //   setSearchValue('');
-  //   setFiilterData(dataFromDB);
-  //   refSearch.current.focus();
-  // }
-
   return (
     <div className="w-auto">
       <section className="pb-4 pt-1">

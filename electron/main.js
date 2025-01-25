@@ -3,6 +3,7 @@ const path = require('path');
 const DB_QUERYS = require('./db/querys.cjs');
 
 let mainWindow;
+let infoWindow = null;
 
 // Manejar la solicitud de abrir un enlace externo
 ipcMain.handle('open-external', async (_, url) => {
@@ -34,8 +35,7 @@ app.on('ready', () => {
     },
     icon: path.join(__dirname, '../assets/icons/safe-box.png')
   });
-  console.log(path.join(__dirname, '../assets/icons/safe-box.png'));
-  
+
   if (process.env.VITE_DEV_SERVER_URL) {
     mainWindow.loadURL(process.env.VITE_DEV_SERVER_URL);
     mainWindow.webContents.openDevTools();
@@ -48,5 +48,52 @@ app.on('ready', () => {
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit();
+  }
+});
+
+ipcMain.handle('open-info-window', () => {
+  if (infoWindow) {
+    infoWindow.focus();
+    return;
+  }
+
+  infoWindow = new BrowserWindow({
+    width: 400,
+    height: 200,
+    resizable: false,
+    minimizable: false,
+    maximizable: false,
+    modal: true,
+    parent: BrowserWindow.getFocusedWindow(),
+    show: false,
+    webPreferences: {
+      preload: path.join(__dirname, 'preload.cjs'),
+      contextIsolation: true,
+      nodeIntegration: false,
+    },
+    icon: path.join(__dirname, '../assets/icons/safe-box.png')
+  });
+
+  if (process.env.VITE_DEV_SERVER_URL) {
+    infoWindow.loadURL(`${process.env.VITE_DEV_SERVER_URL}info.html`);
+    infoWindow.webContents.openDevTools();
+  } else {
+    infoWindow.loadFile(path.join(__dirname, '../dist/info.html'));
+  }
+
+  infoWindow.setMenu(null);
+
+  infoWindow.once('ready-to-show', () => {
+    infoWindow.show();
+  });
+
+  infoWindow.on('closed', () => {
+    infoWindow = null;
+  });
+});
+
+ipcMain.handle('close-info-window', () => {
+  if (infoWindow) {
+    infoWindow.close();
   }
 });

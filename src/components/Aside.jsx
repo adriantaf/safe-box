@@ -1,6 +1,5 @@
 import React from "react";
 import FormPassword from "./FormPassword";
-import A from "./common/A";
 import FormDeletePassword from "./FormDeletePassword";
 import { useFormData } from "../context/FormPassDataProvider";
 
@@ -12,9 +11,6 @@ function Aside() {
       { dataForm && (
         <FormDeletePassword />
       )}
-      <div className="mt-auto text-sm text-right p-4">
-        <small>Desarrollado por <A className="text-purple-800 dark:text-purple-300" href="https://github.com/adriantaf">Adrian TM</A></small>
-      </div>
     </aside>
   );
 }
