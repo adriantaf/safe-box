@@ -35,11 +35,6 @@ function selectAll() {
   return dataDecrypted;
 }
 
-// function select(id) {
-//   const statement = DB.prepare('SELECT * FROM keys WHERE id = ?');
-//   return statement.get(id);
-// }
-
 function remove(id) {
   const statement = DB.prepare('DELETE FROM keys WHERE id = ?');
   statement.run(id);
