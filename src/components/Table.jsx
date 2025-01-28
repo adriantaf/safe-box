@@ -27,7 +27,7 @@ function Table({ dataFromDB }) {
 
   return (
     <div className="w-auto">
-      <section className="pb-4 pt-1">
+      <section className="pb-4 pt-0 mt-4">
         <form className="flex gap-2 justify-end">
           <div className="inline-flex w-[400px] gap-1">
             <label htmlFor="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Buscar</label>
@@ -50,9 +50,9 @@ function Table({ dataFromDB }) {
           </div>
         </form>
       </section>
-      <section className="rounded-lg border overflow-x-auto border-gray-300 dark:border-gray-600 whitespace-normal w-full">
+      <section className="rounded-lg border overflow-x-auto h-full border-gray-300 dark:border-gray-600 whitespace-normal w-full overflow-y-auto">
         <table className="w-full text-sm text-left text-zinc-800 dark:text-zinc-300">
-          <thead className="sticky top-0 z-10 bg-neutral-50 text-zinc-600 dark:text-zinc-400 border-b border-b-gray-300 shadow-sm dark:bg-gray-900 dark:border-b-gray-600">
+          <thead className="sticky top-0 z-10 bg-neutral-50 text-zinc-600 dark:text-zinc-400 border-b border-b-gray-300 dark:bg-gray-900 dark:border-b-gray-600">
             <tr>
               <th className="px-2 py-3 pl-3">
                 Plataforma

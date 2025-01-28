@@ -10,7 +10,5 @@ contextBridge.exposeInMainWorld('electronAPI', {
     updateUsername: (id, newValue) => ipcRenderer.invoke('db-update-username', id, newValue),
     updatePassword: (id, newValue) => ipcRenderer.invoke('db-update-password', id, newValue),
     updateDate: (id, newValue) => ipcRenderer.invoke('db-update-date', id, newValue),
-  },
-  openInfoWindow: () => ipcRenderer.invoke('open-info-window'),
-  closeInfoWindow: () => ipcRenderer.invoke('close-info-window')
+  }
 });

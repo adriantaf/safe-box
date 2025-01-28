@@ -2,14 +2,23 @@ import React from "react";
 import ButtonIcon from "./common/ButtonIcon";
 import Add from "../assets/icons/add";
 import Info from "../assets/icons/info";
+import A from './common/A';
 import { useFormData } from "../context/FormPassDataProvider";
 import Logo from '../assets/logo/safe-box.png';
+import { useModal } from "../context/ModalProvider";
 
 function Header() {
   const { formVisibility, setFormVisibility } = useFormData();
+  const { showModal } = useModal();
 
   function showModalInfo() {
-    window.electronAPI.openInfoWindow();
+    const content = (
+      <>
+        <p>Versión <span className="font-mono">1.1.2</span></p>
+        <p>Desarrollado por <A className="text-blue-700 dark:text-blue-300" href="https://github.com/adriantaf">Adrian Tafoya</A></p>
+      </>
+    )
+    showModal(content, "Información");
   }
 
   return (

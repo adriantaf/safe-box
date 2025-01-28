@@ -3,7 +3,7 @@
   "description": "App para gestionar contraseñas",
   "name": "safe-box",
   "private": true,
-  "version": "1.1.1",
+  "version": "1.1.2",
   "main": "electron/main.js",
   "icon": "assets/icons/safe-box.png",
   "scripts": {
@@ -41,25 +41,25 @@
     }
   },
   "dependencies": {
-    "autoprefixer": "^10.4.20",
-    "better-sqlite3": "^11.7.2",
+    "better-sqlite3": "11.8.1",
     "crypto": "^1.0.1",
-    "postcss": "^8.4.49",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react": "19.0.0",
+    "react-dom": "19.0.0"
   },
   "devDependencies": {
-    "@eslint/js": "^9.17.0",
-    "@types/react": "^18.3.18",
-    "@types/react-dom": "^18.3.5",
-    "@vitejs/plugin-react-swc": "^3.5.0",
-    "electron": "^33.2.1",
-    "electron-builder": "^25.1.8",
-    "eslint": "^9.17.0",
-    "eslint-plugin-react": "^7.37.3",
-    "globals": "^15.14.0",
-    "tailwindcss": "^3.4.17",
-    "vite": "^6.0.5",
-    "vite-plugin-electron": "^0.29.0"
+    "@eslint/js": "9.19.0",
+    "@tailwindcss/vite": "^4.0.0",
+    "@types/react": "19.0.8",
+    "@types/react-dom": "19.0.3",
+    "@vitejs/plugin-react-swc": "3.7.2",
+    "autoprefixer": "^10.4.20",
+    "electron": "34.0.1",
+    "electron-builder": "25.1.8",
+    "eslint": "9.19.0",
+    "eslint-plugin-react": "7.37.4",
+    "globals": "15.14.0",
+    "tailwindcss": "^4.0.0",
+    "vite": "6.0.11",
+    "vite-plugin-electron": "0.29.0"
   }
 }
