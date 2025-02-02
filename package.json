@@ -1,5 +1,5 @@
 {
-  "author": "Adrian Tafoya Morales",
+  "author": "Adrian Tafoya Morales <atafoya863@gmail.com>",
   "description": "App para gestionar contraseñas",
   "name": "safe-box",
   "private": true,
@@ -33,7 +33,7 @@
         "AppImage",
         "deb"
       ],
-      "icon": "assets/icons/"
+      "icon": "assets/icons/linux/"
     },
     "mac": {
       "target": "dmg",
