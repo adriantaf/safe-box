@@ -10,12 +10,13 @@ import { useModal } from "../context/ModalProvider";
 function Header() {
   const { formVisibility, setFormVisibility } = useFormData();
   const { showModal } = useModal();
+  const APP_VERSION = "1.1.3";
 
   function showModalInfo() {
     const content = (
       <>
-        <p>Versión <span className="font-mono">1.1.2</span></p>
-        <p>Desarrollado por <A className="text-blue-700 dark:text-blue-300" href="https://github.com/adriantaf">Adrian Tafoya</A></p>
+        <p>Versión: <span className="font-mono">{ APP_VERSION }</span></p>
+        <p>Desarrollador: <A className="text-blue-700 dark:text-blue-300" href="https://github.com/adriantaf">Adrian Tafoya</A></p>
       </>
     )
     showModal(content, "Información");
@@ -31,7 +32,7 @@ function Header() {
               className="size-10 rounded-lg border-2 border-gray-400 dark:border-gray-600"
               alt="Logotipo de SafeBox"
             />
-            <span className="font-bold font-mono text-3xl">SafeBox</span>
+            <span className="font-bold font-mono text-3xl dark:text-neutral-100">SafeBox</span>
           </div>
           <div className='flex justify-end gap-2'>
             <ButtonIcon outline className='gap-3 mb-0 me-0' onClick={ showModalInfo }>

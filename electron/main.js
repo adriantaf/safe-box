@@ -25,6 +25,8 @@ app.on('ready', () => {
   mainWindow = new BrowserWindow({
     width: 900,
     height: 600,
+    minWidth: 600,
+    minHeight: 400,
     webPreferences: {
       preload: path.join(__dirname, 'preload.cjs'),
       contextIsolation: true,

@@ -12,7 +12,7 @@ function App() {
 
   return (
     <>
-      <div className='grid h-screen text-neutral-900 bg-white dark:text-white dark:bg-neutral-900 grid-cols-[1fr_auto] grid-rows-[auto_1fr] overflow-hidden gap-x-0 gap-y-0'>
+      <div className='grid h-screen text-neutral-900 bg-white dark:text-white dark:bg-neutral-900 sm:grid-cols-[1fr_auto] grid-cols-[1fr] grid-rows-[auto_1fr] overflow-hidden gap-x-0 gap-y-0'>
         <Header />
         <main className='px-4 pb-2 pt-0 overflow-y-auto overflow-x-hidden'>
           { dataOfDB === null ? (
