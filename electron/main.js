@@ -1,3 +1,11 @@
+/*
+ * Copyright [2025] [Adrian Tafoya Morales]
+ *
+ * Licensed under the Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0).
+ * You may not use this software for commercial purposes.
+ * For more details, visit: https://creativecommons.org/licenses/by-nc/4.0/
+ */
+
 const { app, BrowserWindow, ipcMain, shell } = require('electron');
 const path = require('path');
 const DB_QUERYS = require('./db/querys.cjs');
