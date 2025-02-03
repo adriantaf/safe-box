@@ -1,0 +1,9 @@
+Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)
+
+Copyright [2025] [Adrian Tafoya Morales]
+
+Se concede permiso, sin costo alguno, a cualquier persona para copiar, modificar, distribuir y realizar trabajos derivados del software, siempre que se reconozca el autor original (con la atribución apropiada) y que el uso no sea comercial. No se permite el uso comercial del software.
+
+El software se proporciona "tal cual", sin ninguna garantía expresa o implícita, incluyendo pero no limitado a las garantías de comercialización, adecuación para un propósito particular y no infracción.
+
+Para más detalles sobre la licencia, visita: https://creativecommons.org/licenses/by-nc/4.0/
