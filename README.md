@@ -47,7 +47,7 @@ SafeBox es un **gestor de contraseñas local** que ofrece una forma **segura y s
 
 ### Instalación predeterminada
 Para instalar SafeBox con la **clave secreta predeterminada** sigue estos pasos:
-1. Ve al apartado [Realeases](https://github.com/adriantaf/safe-box/) en este repositorio
+1. Ve al apartado [Realeases](https://github.com/adriantaf/safe-box/releases) en este repositorio
 2. Dirigete a la ultima versión y en el apartado **Assets** descarga el instalador adecuado para tu SO
 3. Instalacion:
     - En Linux: solo instala el archivo .deb o ejecuta el archivo .AppImage y listo!
