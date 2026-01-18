@@ -13,8 +13,7 @@ SafeBox es un **gestor de contraseñas local**, diseñado para ser seguro y fác
 3. [Tecnologías](#tecnologías)
 4. [Instalación](#instalación)
 5. [Uso](#uso)
-6. [Contribuciones](#contribuciones)
-7. [Licencia](#licencia)
+6. [Licencia](#licencia)
 
 ---
 
@@ -31,6 +30,7 @@ SafeBox es un **gestor de contraseñas local** que ofrece una forma **segura y s
 - **Interfaz amigable**: La aplicación tiene una interfaz sencilla y fácil de usar.
 - **Generador de contraseñas aleatorias**: Crea contraseñas seguras automáticamente.
 - **Temas**: El tema de la aplicación se adapta al SO.
+
 ---
 
 ## Tecnologías
@@ -46,13 +46,14 @@ SafeBox es un **gestor de contraseñas local** que ofrece una forma **segura y s
 ## Instalación
 
 ### Instalación predeterminada
+
 Para instalar SafeBox con la **clave secreta predeterminada** sigue estos pasos:
+
 1. Ve al apartado [Realeases](https://github.com/adriantaf/safe-box/releases) en este repositorio
 2. Dirigete a la ultima versión y en el apartado **Assets** descarga el instalador adecuado para tu SO
 3. Instalacion:
-    - En Linux: solo instala el archivo .deb o ejecuta el archivo .AppImage y listo!
-    - En Windows: Debido a que la aplicación no está firmada se te mostrará una advertencia, para resolver esto solo presiona en *Mas información* al final del texto y por ultimo presiona el botón *Ejecutar de todos modos* y listo!
-
+   - En Linux: solo instala el archivo .deb o ejecuta el archivo .AppImage y listo!
+   - En Windows: Debido a que la aplicación no está firmada se te mostrará una advertencia, para resolver esto solo presiona en _Mas información_ al final del texto y por ultimo presiona el botón _Ejecutar de todos modos_ y listo!
 
 ### Compilación con una nueva clave secreta
 
@@ -65,46 +66,42 @@ Si prefieres compilar la aplicación con una **clave secreta personalizada**, si
    cd safe-box
    ```
 3. Instalar las dependencias:
-    ```bash
+   ```bash
    npm install
    ```
 4. Recompila las dependencias nativas:
-    Especialmente util para *better-sqlite3*
-    ```bash
+   Especialmente util para _better-sqlite3_
+   ```bash
    npx electron rebuild
    ```
 5. Asigna tu propia **clave secreta**, edita el archivo `electron\crypt\secret_key.cjs`
-    ```js
-   const SECRET_KEY = 'tu_clave_secreta';
+   ```js
+   const SECRET_KEY = "tu_clave_secreta";
    ```
    **Muy importante:** Guarda los cambios
 6. Construye la aplicación:
-    ```bash
+   ```bash
    npm run build
-    # si deseas probar la aplicación ejecuta:
+   # si deseas probar la aplicación ejecuta:
    npm run start
    ```
 7. Genera el instalador
-    ```bash
+   ```bash
    npm run dist
    ```
 8. Ejecuta el instalador:
-    - Ve a `dist-electron/` 
-    - Busca el archivo SafeBox Setup x.x.x.[exe/deb/AppImage] dependiendo del SO
-    Ahora disfruta de *SafeBox*
-
+   - Ve a `dist-electron/`
+   - Busca el archivo SafeBox Setup x.x.x.[exe/deb/AppImage] dependiendo del SO
+     Ahora disfruta de _SafeBox_
 
 ---
 
 ## Uso
+
 Una vez instalada la aplicación, simplemente busca SafeBox en tu computadora y comienza a agregar, gestionar y almacenar tus contraseñas de manera segura.
 
 ---
 
-## Contribuciones
-Por ahora no se aceptan contribuciones.
-
----
-
 ## Licencia
-Este proyecto está bajo la licencia [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/), lo que significa que puedes compartir y adaptar el proyecto, pero no para fines comerciales. 🗿   
+
+Este proyecto está bajo la licencia [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/), lo que significa que puedes compartir y adaptar el proyecto, pero no para fines comerciales. 🗿
